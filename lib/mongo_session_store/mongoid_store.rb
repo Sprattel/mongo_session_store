@@ -11,11 +11,7 @@ module ActionDispatch
 
         store_in :collection => MongoSessionStore.collection_name
 
-        field :_id, :type => String
-
         field :data, :type => Moped::BSON::Binary, :default => Moped::BSON::Binary.new(:generic, Marshal.dump({}))
-
-        attr_accessible :_id, :data
       end
 
       private
